@@ -8,6 +8,7 @@ import AIVoice from './components/AIVoice';
 import GeneratedAIImages from './components/GeneratedAIImages';
 import SwitcherModal from './components/SwitcherModal';
 import Navbar from './components/Navbar';
+import { ClipLoader } from 'react-spinners';
 
 import {
   charactersAnime,
@@ -40,8 +41,8 @@ export default function Home() {
   const [currentVoiceCharacters, setCurrentVoiceCharacters] = useState(voiceCharactersGirls);
   const [currentAIImages, setCurrentAIImages] = useState(generatedAiImageGirls);
   const [activeCategory, setActiveCategory] = useState<string>('girls'); 
-  
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const hasVisited = localStorage.getItem('hasVisited');
@@ -51,55 +52,70 @@ export default function Home() {
   }, []);
 
   const handleCategorySelect = (category: string) => {
+    setLoading(true);
+
     const lowerCaseCategory = category.toLowerCase();
     setActiveCategory(lowerCaseCategory);
 
-    switch (lowerCaseCategory) {
-      case 'girls':
-        setCurrentHeroSection(charactersGirls);
-        setCurrentFantasies(fantasiesGirls);
-        setCurrentRolePlay(charactersRolePlayGirls); 
-        setCurrentVoiceCharacters(voiceCharactersGirls); 
-        setCurrentAIImages(generatedAiImageGirls); 
-        break;
-      case 'anime':
-        setCurrentHeroSection(charactersAnime);
-        setCurrentFantasies(fantasiesAnime);
-        setCurrentRolePlay(charactersRolePlayAnime); 
-        setCurrentVoiceCharacters(voiceCharactersAnime);
-        setCurrentAIImages(generatedAiImageAnime); 
-        break;
-      case 'guys':
-        setCurrentHeroSection(charactersGuys);
-        setCurrentFantasies(fantasiesGuys); 
-        setCurrentRolePlay(charactersRolePlayGuys); 
-        setCurrentVoiceCharacters(voiceCharactersGuys); 
-        setCurrentAIImages(generatedAiImageGuys); 
-        break;
-      default:
-        setCurrentHeroSection(charactersGirls);
-        setCurrentFantasies(fantasiesGirls);
-        setCurrentRolePlay(charactersRolePlayGirls); 
-        setCurrentVoiceCharacters(voiceCharactersGirls); 
-        setCurrentAIImages(generatedAiImageGirls); 
-        break;
-    }
-    
-    setIsModalVisible(false);
-    localStorage.setItem('hasVisited', 'true');
+    setTimeout(() => {
+      switch (lowerCaseCategory) {
+        case 'girls':
+          setCurrentHeroSection(charactersGirls);
+          setCurrentFantasies(fantasiesGirls);
+          setCurrentRolePlay(charactersRolePlayGirls); 
+          setCurrentVoiceCharacters(voiceCharactersGirls); 
+          setCurrentAIImages(generatedAiImageGirls); 
+          break;
+        case 'anime':
+          setCurrentHeroSection(charactersAnime);
+          setCurrentFantasies(fantasiesAnime);
+          setCurrentRolePlay(charactersRolePlayAnime); 
+          setCurrentVoiceCharacters(voiceCharactersAnime);
+          setCurrentAIImages(generatedAiImageAnime); 
+          break;
+        case 'guys':
+          setCurrentHeroSection(charactersGuys);
+          setCurrentFantasies(fantasiesGuys); 
+          setCurrentRolePlay(charactersRolePlayGuys); 
+          setCurrentVoiceCharacters(voiceCharactersGuys); 
+          setCurrentAIImages(generatedAiImageGuys); 
+          break;
+        default:
+          setCurrentHeroSection(charactersGirls);
+          setCurrentFantasies(fantasiesGirls);
+          setCurrentRolePlay(charactersRolePlayGirls); 
+          setCurrentVoiceCharacters(voiceCharactersGirls); 
+          setCurrentAIImages(generatedAiImageGirls); 
+          break;
+      }
+
+      setLoading(false); 
+      setIsModalVisible(false);
+      localStorage.setItem('hasVisited', 'true');
+    }, 1000); 
   };
 
   return (
     <div className='mb-10'>
-      <Navbar activeCategory={activeCategory} onSelect={handleCategorySelect} />
 
-      {isModalVisible && <SwitcherModal onSelect={handleCategorySelect} />}
 
-      <HeroSection data={currentHeroSection}/>
-      <AIFantasies data={currentFantasies} /> 
-      <AIRoleplay data={currentRolePlay} /> 
-      <AIVoice data={currentVoiceCharacters} /> 
-      <GeneratedAIImages data={currentAIImages} /> 
+      {loading && (
+        <div className="fixed inset-0 flex justify-center items-center bg-opacity-70 bg-black z-50">
+          <ClipLoader color="#ffffff" size={50} />
+        </div>
+      )}
+
+      {!loading && (
+        <>
+          {isModalVisible && <SwitcherModal onSelect={handleCategorySelect} />}
+          <Navbar activeCategory={activeCategory} onSelect={handleCategorySelect} />
+          <HeroSection data={currentHeroSection} />
+          <AIFantasies data={currentFantasies} /> 
+          <AIRoleplay data={currentRolePlay} /> 
+          <AIVoice data={currentVoiceCharacters} /> 
+          <GeneratedAIImages data={currentAIImages} /> 
+        </>
+      )}
     </div>
   );
 }
