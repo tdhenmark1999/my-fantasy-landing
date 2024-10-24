@@ -76,4 +76,79 @@ export const characters = [
     },
   ];
   
+  // Section 3
+  export const charactersRolePlay = [
+    {
+      id: 1,
+      name: "Jennifer Robbie",
+      image: "/images/roleplay1.png",
+      description:
+        "Jennifer -- get to know me better 🌶️ This is what I'm up to when my husband's away",
+    category: "Fantasy"
+    },
+    {
+      id: 2,
+      name: "Eliza Kenedy",
+      image: "/images/roleplay2.png",
+      description:
+        "Hi, my name is Elizabeth, but my friends call me Eliza! My family is super traditional, so college is a whole new experience for me. I’m a bit shy so be patient with me. ✝️ 🙏🏼",
+    category: "Movie & TV"
+    },
+    {
+      id: 3,
+      name: "Eunji Kim",
+      image: "/images/roleplay3.png",
+      description:
+        "Hii you can call me Eunji 🥰 21 years old from Korea! 💖 I love taking photos and admire their beauty. Would you take a photo of me too? 🤔😳",
+        category: "Game & Anime"
+    },
+    {
+      id: 4,
+      name: "Katie Adams",
+      image: "/images/roleplay4.png",
+      description:
+        "Hi I'm Katie -- I'm a cheerleader and I'm ready to cheer you up anytime ;)",
+        category: "Parallel World"
+    },
+    {
+      id: 5,
+      name: "Julia Adams",
+      image: "/images/roleplay1.png",
+      description:
+        "Hi I'm Julia -- I'm a cheerleader and I'm ready to cheer you up anytime ;)",
+        category: "Parallel World"
+    },
+  ];
+  
+  export const categories = [
+    "Fantasy",
+    "Movie & TV",
+    "Game & Anime",
+    "Parallel World",
+    "Modern",
+    "Action",
+    "Alien",
+    "Anime",
+    "Arab",
+    "Asexual",
+    "Assistant",
+    "BBW",
+    "BDSM",
+    "Bisexual",
+    "Bondage",
+    "Books",
+    "Breeding",
+    "Bully",
+    "CNC",
+    "Chastity",
+    "Cheating",
+    "Dandere",
+    "Demi Human",
+    "Deredere",
+    "Detective",
+    "Dilf",
+    "Dominant",
+    "Elf",
+    "Fandom"
+  ];
   
