@@ -12,7 +12,7 @@ interface CharacterCardProps {
   const CharacterCard: React.FC<CharacterCardProps> = ({ character, width = "100%", height = "100%" }) => {
     return (
       <div
-        className={`bg-gray-800 rounded-[16px] overflow-hidden transition-transform transform hover:scale-105 relative`}
+        className={`bg-gray-800 rounded-2xl overflow-hidden transition-transform transform hover:scale-105 relative`}
         style={{ width }}>
         <img
           src={character.image}

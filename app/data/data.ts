@@ -84,7 +84,7 @@ export const characters = [
       image: "/images/roleplay1.png",
       description:
         "Jennifer -- get to know me better 🌶️ This is what I'm up to when my husband's away",
-    category: "Fantasy"
+      category: "Fantasy",
     },
     {
       id: 2,
@@ -92,7 +92,7 @@ export const characters = [
       image: "/images/roleplay2.png",
       description:
         "Hi, my name is Elizabeth, but my friends call me Eliza! My family is super traditional, so college is a whole new experience for me. I’m a bit shy so be patient with me. ✝️ 🙏🏼",
-    category: "Movie & TV"
+      category: "Movie & TV",
     },
     {
       id: 3,
@@ -100,7 +100,7 @@ export const characters = [
       image: "/images/roleplay3.png",
       description:
         "Hii you can call me Eunji 🥰 21 years old from Korea! 💖 I love taking photos and admire their beauty. Would you take a photo of me too? 🤔😳",
-        category: "Game & Anime"
+      category: "Game & Anime",
     },
     {
       id: 4,
@@ -108,7 +108,7 @@ export const characters = [
       image: "/images/roleplay4.png",
       description:
         "Hi I'm Katie -- I'm a cheerleader and I'm ready to cheer you up anytime ;)",
-        category: "Parallel World"
+      category: "Parallel World",
     },
     {
       id: 5,
@@ -116,7 +116,7 @@ export const characters = [
       image: "/images/roleplay1.png",
       description:
         "Hi I'm Julia -- I'm a cheerleader and I'm ready to cheer you up anytime ;)",
-        category: "Parallel World"
+      category: "Parallel World",
     },
   ];
   
@@ -149,6 +149,42 @@ export const characters = [
     "Dilf",
     "Dominant",
     "Elf",
-    "Fandom"
+    "Fandom",
+  ];
+  
+  //   Section 4
+  export const voiceCharacters = [
+    {
+      id: 1,
+      image: "/avatar/avatar3.png",
+      name: "Ron",
+      description: "Ron is always here to help with a joke or two!",
+    },
+    {
+      id: 2,
+      image: "/avatar/avatar4.png",
+      name: "Eunji",
+      description: "Eunji is ready to share her wisdom and knowledge.",
+    },
+    {
+      id: 3,
+      image: "/avatar/avatar7.png",
+      name: "Hermione",
+      description: "Hermione is ready to share her wisdom and knowledge.",
+    },
+    {
+      id: 4,
+      image: "/avatar/avatar5.png",
+      name: "Sherlock",
+      description:
+        "Sherlock is the genius detective who will solve your mysteries.",
+    },
+    {
+      id: 5,
+      image: "/avatar/avatar6.png",
+      name: "Kathleen",
+      description:
+        "Kathleen is the genius detective who will solve your mysteries.",
+    },
   ];
   
