@@ -1,11 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
-import { voiceCharacters } from "./../data/data";
 import HeaderContainer from "./HeaderContainer";
 import { motion, AnimatePresence } from "framer-motion";
 
-const AIVoice: React.FC = () => {
+interface AIVoiceProps {
+data: any[]; 
+}
+
+const AIVoice: React.FC<AIVoiceProps> = ({ data }) => {
   const [selectedAvatar, setSelectedAvatar] = useState(2);
 
   return (
@@ -45,7 +48,7 @@ const AIVoice: React.FC = () => {
                 className="pointer-events-none absolute top-0 left-1/2 transform -translate-x-1/2"
               />
               <div className="flex justify-center space-x-8 mt-10">
-                {voiceCharacters.map((avatar, index) => (
+                {data.map((avatar, index) => (
                   <div
                     key={avatar.id}
                     className={`relative rounded-full overflow-hidden cursor-pointer transition-transform duration-300 ${
@@ -72,7 +75,7 @@ const AIVoice: React.FC = () => {
                   <div className="flex max-w-[355px] items-start gap-[10px]">
                     <img src="icons/ico-dialog-right.svg" />
                     <p className="text-white text-base">
-                      {voiceCharacters[selectedAvatar].description}
+                      {data[selectedAvatar].description}
                     </p>
                     <img src="icons/ico-dialog-left.svg" />
                   </div>

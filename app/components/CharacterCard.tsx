@@ -14,6 +14,7 @@ interface CharacterCardProps {
       <div
         className={`bg-gray-800 rounded-2xl overflow-hidden transition-transform transform hover:scale-105 relative`}
         style={{ width }}>
+        <div className="image-overlay"></div> 
         <img
           src={character.image}
           alt={character.name}

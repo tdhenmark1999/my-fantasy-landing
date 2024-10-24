@@ -2,9 +2,12 @@
 
 import CharacterCard from "./CharacterCard";
 import { motion, AnimatePresence } from "framer-motion";
-import { characters } from "./../data/data";
 
-const HeroSection: React.FC = () => {
+interface HeroSectionProps {
+    data: any[]; 
+  }
+
+const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
   return (
     <section className="px-4 sm:px-6 lg:px-8">
       <motion.div
@@ -37,22 +40,28 @@ const HeroSection: React.FC = () => {
               </button>
             </div>
           </div>
-
+          <motion.div
+            initial={{ height: "auto" }}
+            animate={{ height: "auto" }}
+            transition={{ duration: 0.4 }}
+            className="h-auto overflow-auto max-w-full lg:overflow-hidden"
+        >
           <div className="flex space-x-4 flex-1 overflow-x-auto max-w-full lg:overflow-visible">
-          <AnimatePresence>
-              {characters.map((character) => (
-                <motion.div
-                  key={character.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.4 }}
-                >
-                  <CharacterCard character={character} width="199px"/>
+            <AnimatePresence>
+              {data.map((character,index) => (
+                 <motion.div
+                 key={index}
+                 initial={{ opacity: 0, scale: 0.9 }}
+                 animate={{ opacity: 1, scale: 1 }}
+                 exit={{ opacity: 0, scale: 0.9 }}
+                 transition={{ duration: 0.3 }}
+               >
+                  <CharacterCard character={character} width="199px" height="300px"/>
                 </motion.div>
               ))}
             </AnimatePresence>
           </div>
+          </motion.div>
         </div>
       </motion.div>
     </section>

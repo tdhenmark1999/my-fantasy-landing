@@ -4,10 +4,13 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import FantasyCard from "./FantasyCard";
 import FantasyModal from "./FantasyModal";
-import { fantasies } from "./../data/data";
 import HeaderContainer from "./HeaderContainer";
 
-const AIFantasies: React.FC = () => {
+interface AIFantasiesProps {
+    data: any[]; 
+  }
+
+  const AIFantasies: React.FC<AIFantasiesProps> = ({ data }) => {
   const [selectedFantasy, setSelectedFantasy] = useState<any>(null);
   const [liked, setLiked] = useState<{ [key: string]: boolean }>({});
   const [visibleFantasies, setVisibleFantasies] = useState(3);
@@ -43,7 +46,7 @@ const AIFantasies: React.FC = () => {
       setIsFullListShown(false);
       setIsAnimating(false);
     } else {
-      setVisibleFantasies(fantasies.length);
+      setVisibleFantasies(data.length);
       setIsFullListShown(true);
     }
   };
@@ -64,7 +67,7 @@ const AIFantasies: React.FC = () => {
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
           <AnimatePresence>
-            {fantasies.slice(0, visibleFantasies).map((fantasy) => (
+            {data.slice(0, visibleFantasies).map((fantasy) => (
               <motion.div
                 key={fantasy.id}
                 initial={{ opacity: 0, scale: 0.9 }}

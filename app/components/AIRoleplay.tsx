@@ -3,10 +3,14 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import CharacterCard from "./CharacterCard";
-import { charactersRolePlay, categories } from "./../data/data";
+import { categories } from "../data/data";
 import HeaderContainer from "./HeaderContainer";
 
-const AIRoleplay: React.FC = () => {
+  interface AIRoleplayProps {
+    data: any[]; 
+  }
+
+  const AIRoleplay: React.FC<AIRoleplayProps> = ({ data }) => {
   const [visibleCharacters, setVisibleCharacters] = useState(4);
   const [isFullListShown, setIsFullListShown] = useState(false);
   const [activeCategory, setActiveCategory] = useState<string>("");
@@ -32,10 +36,10 @@ const AIRoleplay: React.FC = () => {
   };
 
   const filteredCharacters = activeCategory
-    ? charactersRolePlay.filter(
+    ? data.filter(
         (character) => character.category === activeCategory
       )
-    : charactersRolePlay;
+    : data;
 
   return (
     <section className="px-4 sm:px-6 lg:px-8 py-8">
@@ -78,7 +82,7 @@ const AIRoleplay: React.FC = () => {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
               >
-                <CharacterCard key={character.name} character={character} />
+                <CharacterCard key={character.name} character={character} height="412px" />
               </motion.div>
             ))}
           </AnimatePresence>

@@ -46,3 +46,11 @@ body {
   background: linear-gradient(90deg, #202024 0%, rgba(19, 19, 22, 0) 100%), linear-gradient(0deg, #202024, #202024);
 
 }
+
+.image-overlay {
+  background: rgba(0, 0, 0, .1);
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  width: 100%;
+}

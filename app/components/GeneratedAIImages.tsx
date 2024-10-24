@@ -1,23 +1,28 @@
 "use client";
 
-import React, { useState } from "react";
-import { generatedAiImage } from "./../data/data";
+import React, { useState, useEffect } from "react";
 import HeaderContainer from "./HeaderContainer";
 import { motion, AnimatePresence } from "framer-motion";
 
-const GenerateImagePage: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] = useState(
-    generatedAiImage[1].title
-  );
+interface GenerateImagePageProps {
+  data: {
+    id: number;
+    title: string;
+    description: string;
+    images: string[];
+  }[];
+}
 
+const GenerateImagePage: React.FC<GenerateImagePageProps> = ({ data }) => {
+  const [selectedCategory, setSelectedCategory] = useState(2);
+  
   return (
     <div className="px-4 sm:px-6 lg:px-8 py-8">
       <div className="container mx-auto">
         <HeaderContainer
           buttonText="Generate AI Image"
           title="Beautiful erotic art in seconds."
-          description="Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt."
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt."
         />
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
@@ -28,15 +33,15 @@ const GenerateImagePage: React.FC = () => {
           <AnimatePresence>
             <div className="flex flex-col lg:flex-row customer-bg-linear-1 p-6 rounded-2xl mt-6">
               <div className="w-full lg:w-1/2">
-                {generatedAiImage.map((category) => (
+                {data.map((category) => (
                   <div
-                    key={category.title}
+                    key={category.id}
                     className={`rounded-none p-4 text-white cursor-pointer ${
-                      selectedCategory === category.title
+                      selectedCategory === category.id
                         ? "bg-gradient-to-r from-[#2C2C30] to-[#202024] border-l-2 border-[#F43F3F]"
                         : "border-l-2 border-[#2C2C30]"
                     }`}
-                    onClick={() => setSelectedCategory(category.title)}
+                    onClick={() => setSelectedCategory(category.id)}
                   >
                     <h2 className="text-white lg:text-base text-xs">
                       {category.title}
@@ -54,8 +59,8 @@ const GenerateImagePage: React.FC = () => {
               </div>
 
               <div className="flex space-x-4 mt-8 lg:mt-0 lg:ml-8">
-                {generatedAiImage
-                  .find((category) => category.title === selectedCategory)
+                {data
+                  .find((category) => category.id === selectedCategory)
                   ?.images.map((image, index) => (
                     <div key={index} className="">
                       <img
