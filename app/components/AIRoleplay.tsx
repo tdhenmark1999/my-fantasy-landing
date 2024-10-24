@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import CharacterCard from "./CharacterCard";
 import { charactersRolePlay, categories } from "./../data/data";
+import HeaderContainer from "./HeaderContainer";
 
 const AIRoleplay: React.FC = () => {
   const [visibleCharacters, setVisibleCharacters] = useState(4);
@@ -16,8 +17,8 @@ const AIRoleplay: React.FC = () => {
     } else {
       setActiveCategory(category);
     }
-    setVisibleCharacters(4); 
-    setIsFullListShown(false); 
+    setVisibleCharacters(4);
+    setIsFullListShown(false);
   };
 
   const toggleShowMore = () => {
@@ -31,11 +32,14 @@ const AIRoleplay: React.FC = () => {
   };
 
   const filteredCharacters = activeCategory
-    ? charactersRolePlay.filter((character) => character.category === activeCategory)
-    : charactersRolePlay; 
+    ? charactersRolePlay.filter(
+        (character) => character.category === activeCategory
+      )
+    : charactersRolePlay;
 
   return (
     <section className="px-4 sm:px-6 lg:px-8 py-8">
+      <HeaderContainer buttonText="AI Roleplay" title="Recommended For You." />
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -43,13 +47,6 @@ const AIRoleplay: React.FC = () => {
         transition={{ duration: 0.3 }}
       >
         <AnimatePresence>
-          <h2 className="text-red-500 text-sm md:text-base lg:text-lg font-bold">
-            AI Roleplay
-          </h2>
-          <p className="text-xl md:text-2xl lg:text-3xl font-bold mt-2">
-            Recommended For You.
-          </p>
-
           <div className="flex max-w-full overflow-auto flex-nowrap justify-start flex-wrap mt-6 space-x-2 pb-3 custom-scrollbar">
             {categories.map((category) => (
               <button
@@ -95,11 +92,11 @@ const AIRoleplay: React.FC = () => {
       >
         <AnimatePresence>
           <div className="flex justify-center mt-8 space-x-4">
-            <button className="bg-red-500 px-4 sm:px-6 py-3 text-white rounded-full text-sm sm:text-base">
+            <button className="w-full md:w-auto bg-red-500 px-4 sm:px-6 py-3 text-white rounded-full text-sm sm:text-base">
               Create AI Boyfriend
             </button>
             <button
-              className="bg-gray-500 px-4 sm:px-8 py-3 text-white rounded-full text-sm sm:text-base"
+              className="w-full md:w-auto bg-gray-500 px-4 sm:px-8 py-3 text-white rounded-full text-sm sm:text-base"
               onClick={toggleShowMore}
             >
               {isFullListShown ? "Show Less" : "Show More"}

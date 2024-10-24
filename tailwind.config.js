@@ -12,6 +12,7 @@ module.exports = {
       colors: {
         'red-500': '#F43F3F',
         'gray-100': '#EFEFEF',
+        'gray-150': '#D7D7D7',
         'gray-200': '#E2E9ED',
         'gray-300': '#C9C9C9',
         'gray-350': '#ADADAD',
@@ -19,7 +20,7 @@ module.exports = {
         'gray-550': '#3B3B42',
         'gray-600': '#26272B',
         'gray-950': '#131316'
-      },
+      }, 
       boxShadow: {
         'custom': '0px 28px 22.1px -32px rgba(0, 0, 0, 0.25)',
       },

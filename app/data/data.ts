@@ -188,3 +188,20 @@ export const characters = [
     },
   ];
   
+export const generatedAiImage = [
+    {
+      title: "seductive posture, medium breasts",
+      description: "High Resolution, Portrait, Body Stocking, On All Fours",
+      images: ["images/image5.png", "images/image5.png", "images/image5.png"],
+    },
+    {
+      title: "focus face, smiling, bunny, pink hair",
+      description: "Nectar 2.5 Model, Full HD, Portrait, Bunny Costume",
+      images: ["images/image6.png", "images/image6.png", "images/image6.png"],
+    },
+    {
+      title: "full HD portrait, seductive look",
+      description: "Full HD, Portrait, Body Stocking, On All Fours",
+      images: ["images/image7.png", "images/image7.png", "images/image7.png"],
+    },
+  ];

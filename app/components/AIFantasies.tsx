@@ -4,15 +4,15 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import FantasyCard from "./FantasyCard";
 import FantasyModal from "./FantasyModal";
-import { fantasies } from './../data/data';
+import { fantasies } from "./../data/data";
+import HeaderContainer from "./HeaderContainer";
 
 const AIFantasies: React.FC = () => {
   const [selectedFantasy, setSelectedFantasy] = useState<any>(null);
   const [liked, setLiked] = useState<{ [key: string]: boolean }>({});
-  const [visibleFantasies, setVisibleFantasies] = useState(3); 
-  const [isFullListShown, setIsFullListShown] = useState(false); 
-  const [isAnimating, setIsAnimating] = useState(false); 
-
+  const [visibleFantasies, setVisibleFantasies] = useState(3);
+  const [isFullListShown, setIsFullListShown] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const openModal = (fantasy: any) => {
     setSelectedFantasy(fantasy);
@@ -39,9 +39,9 @@ const AIFantasies: React.FC = () => {
   const toggleShowMore = () => {
     if (isFullListShown) {
       setIsAnimating(true);
-        setVisibleFantasies(3);
-        setIsFullListShown(false);
-        setIsAnimating(false);
+      setVisibleFantasies(3);
+      setIsFullListShown(false);
+      setIsAnimating(false);
     } else {
       setVisibleFantasies(fantasies.length);
       setIsFullListShown(true);
@@ -50,25 +50,12 @@ const AIFantasies: React.FC = () => {
 
   return (
     <section className="px-4 sm:px-6 lg:px-8 py-8">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.9 }}
-        transition={{ duration: 0.3 }}
-      >
-        <AnimatePresence>
-          <div className="max-w-[380px]">
-            <h2 className="text-red-500 text-base font-bold">AI Fantasies</h2>
-            <h1 className="text-2xl font-bold mt-2">
-              Live your dream experience.
-            </h1>
-            <p className="text-gray-350 mt-2 text-base">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt.
-            </p>
-          </div>
-        </AnimatePresence>
-      </motion.div>
+      <HeaderContainer
+        buttonText="AI Fantasies"
+        title="Live your dream experience"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt."
+      />
       <motion.div
         initial={{ height: "auto" }}
         animate={{ height: "auto" }}
@@ -105,11 +92,11 @@ const AIFantasies: React.FC = () => {
       >
         <AnimatePresence>
           <div className="mt-5 flex space-x-4 justify-center">
-            <button className="bg-red-500 px-8 py-3 text-white rounded-full text-sm">
+            <button className="w-full md:w-auto bg-red-500 px-8 py-3 text-white rounded-full text-sm">
               Create Fantasy
             </button>
             <button
-              className="bg-gray-500 px-8 py-3 text-white rounded-full text-sm"
+              className="w-full md:w-auto bg-gray-500 px-8 py-3 text-white rounded-full text-sm"
               onClick={toggleShowMore}
               disabled={isAnimating}
             >
