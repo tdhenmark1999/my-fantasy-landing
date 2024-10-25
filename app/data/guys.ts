@@ -1,24 +1,90 @@
 // Section 1: Characters (Guys)
-export const charactersGuys = [
-  {
-    id: 1,
-    name: "Jack",
-    image: "https://images.unsplash.com/photo-1496346236646-50e985b31ea4?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
-    description: "Jack is the leader of the group, always confident and strong.",
-  },
-  {
-    id: 2,
-    name: "Michael",
-    image: "https://plus.unsplash.com/premium_photo-1672239496290-5061cfee7ebb?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bWVufGVufDB8fDB8fHww", 
-    description: "Michael is the quiet thinker, always providing wisdom when needed.",
-  },
-  {
-    id: 3,
-    name: "Lucas",
-    image: "https://images.unsplash.com/photo-1492447166138-50c3889fccb1?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWVufGVufDB8fDB8fHww", 
-    description: "Lucas is fun and adventurous, always looking for the next thrill.",
-  }
-];
+
+import { CharacterSingle } from '../model/Character';
+
+export const charactersGuys: Record<string, CharacterSingle[]> = {
+  "😈": [
+    {
+      id: 1,
+      name: "Kuro",
+      image: "https://image.tensorartassets.com/cdn-cgi/image/anim=false,plain=false,w=2048,f=jpeg,q=85/posts/images/679876164835117358/562d3a3e-4a59-4562-ae13-9d24230f1434.jpg",
+      description: "A dark and brooding swordsman with a shadowy past.",
+    },
+    {
+      id: 2,
+      name: "Ryu",
+      image: "https://preview.redd.it/if-man-evil-why-sexy-v0-tty5scohg6ad1.jpg?width=640&crop=smart&auto=webp&s=68963b3aaf28e3f8a1ab410f15977c9bf5253591",
+      description: "A rogue warrior with mysterious powers.",
+    },
+    {
+      id: 3,
+      name: "Zane",
+      image: "https://image.tensorartassets.com/cdn-cgi/image/anim=false,plain=false,w=2048,f=jpeg,q=85/posts/images/663982870284696731/5caba637-60af-4985-bdf6-e8e1a3c23485.jpg",
+      description: "A sinister assassin with a quick blade and a sharp mind.",
+    },
+  ],
+  "🔥": [
+    {
+      id: 1,
+      name: "Taro",
+      image: "https://media.istockphoto.com/id/519032061/photo/handsome-shirtless-young-man-outdoor.jpg?s=612x612&w=0&k=20&c=XyICvcUQHitUgnUmqyAQbXcYqMdKYek4bSgjQskaN9I=",
+      description: "A fierce warrior with a fiery temper and unmatched strength.",
+    },
+    {
+      id: 2,
+      name: "Hikaru",
+      image: "https://miro.medium.com/v2/resize:fit:1400/0*vD9seNBNsSyoNUTh",
+      description: "A master of fire magic, with a burning passion for justice.",
+    },
+    {
+      id: 3,
+      name: "Kai",
+      image: "https://www.roblangimages.com/img-get2/I0000csqhO.iuwIM/fit=1000x750/sexy-man-in-a-white-button-down-shirt.jpg",
+      description: "A rebellious fighter, always ready to ignite a battle.",
+    },
+  ],
+  "😎": [
+    {
+      id: 1,
+      name: "Yuto",
+      image: "https://hips.hearstapps.com/harpersbazaar/assets/17/15/hbz-hottest-men-brad-pitt-gettyimages-144453867.jpg",
+      description: "A laid-back and charismatic leader with unmatched charm.",
+    },
+    {
+      id: 2,
+      name: "Ren",
+      image: "https://img.freepik.com/premium-photo/portrait-handsome-man-suit-men-s-beauty-fashion_900706-8366.jpg",
+      description: "A smooth-talking rogue, always keeping his cool.",
+    },
+    {
+      id: 3,
+      name: "Hiroshi",
+      image: "https://i.redd.it/most-attractive-man-in-a-country-v0-9pwswqjkat8b1.jpg?width=1024&format=pjpg&auto=webp&s=7fdc9fbdd3baab7a2a84f5e7f2d6fc2b517a1ba0",
+      description: "The epitome of cool, with a dark secret hidden behind his smile.",
+    },
+  ],
+  "🕶️": [
+    {
+      id: 1,
+      name: "Jack",
+      image: "https://images.unsplash.com/photo-1496346236646-50e985b31ea4?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
+      description: "Jack is the leader of the group, always confident and strong.",
+    },
+    {
+      id: 2,
+      name: "Michael",
+      image: "https://plus.unsplash.com/premium_photo-1672239496290-5061cfee7ebb?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bWVufGVufDB8fDB8fHww", 
+      description: "Michael is the quiet thinker, always providing wisdom when needed.",
+    },
+    {
+      id: 3,
+      name: "Lucas",
+      image: "https://images.unsplash.com/photo-1492447166138-50c3889fccb1?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWVufGVufDB8fDB8fHww", 
+      description: "Lucas is fun and adventurous, always looking for the next thrill.",
+    }
+  ],
+};
+
 
 // Section 2: Fantasies (Guys)
 export const fantasiesGuys = [

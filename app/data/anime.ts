@@ -1,24 +1,90 @@
 // Section 1
-export const charactersAnime = [
+import { CharacterSingle } from '../model/Character';
+
+export const charactersAnime: Record<string, CharacterSingle[]> = {
+  "😈": [
     {
       id: 1,
       name: "Mellow",
-      image: "/images/image3.png",
-      description: "He is your enemy but you guys are in the same friend group.",
+      image: "https://i.pinimg.com/736x/30/1b/5c/301b5cdfa54b647c30844cb48d72b1a4.jpg",
+      description: "A mysterious character with dark powers.",
     },
     {
       id: 2,
       name: "Jay Smith",
-      image: "/images/image1.png",
-      description: "He is your enemy but you guys are in the same friend group.",
+      image: "https://i.pinimg.com/originals/37/1c/f2/371cf22ef7fb8eb7e7f6e5038bb48caa.png",
+      description: "An edgy anti-hero with a troubled past.",
     },
     {
       id: 3,
-      name: "Milo",
-      image: "/images/image2.png",
-      description: "He is your enemy but you guys are in the same friend group.",
+      name: "Ryuu",
+      image: "https://i.pinimg.com/564x/1f/d9/d2/1fd9d2c96c940f691a973f862a1799e3.jpg",
+      description: "A demon warrior seeking redemption.",
     },
-  ];
+  ],
+  "🔥": [
+    {
+      id: 1,
+      name: "Akiro",
+      image: "https://qph.cf2.quoracdn.net/main-qimg-9d6702b6306b2fd5c76c9ed436067332-lq",
+      description: "A fiery swordsman known for his intense combat skills.",
+    },
+    {
+      id: 2,
+      name: "Ember",
+      image: "https://img.freepik.com/premium-vector/hot-anime-girl-character-vector-illustration-design-manga-anime-girl-portrait-young-girl-anime-s_969393-915.jpg",
+      description: "A flame-wielding mage with a burning desire for justice.",
+    },
+    {
+      id: 3,
+      name: "Kai",
+      image: "https://easy-peasy.ai/cdn-cgi/image/quality=80,format=auto,width=700/https://fdczvxmwwjwpwbeeqcth.supabase.co/storage/v1/object/public/images/040c9f5b-9862-4779-9b62-31839ade8f76/e9371071-24f1-4f92-b3b4-85a75f10a702.png",
+      description: "A fiery rebel, always ready for a battle.",
+    },
+  ],
+  "😎": [
+    {
+      id: 1,
+      name: "Takeshi",
+      image: "https://pics.craiyon.com/2023-10-18/ac09507864794338822fd55e7527d4c1.webp",
+      description: "The coolest guy in the crew with unmatched combat skills.",
+    },
+    {
+      id: 2,
+      name: "Sora",
+      image: "https://i.pinimg.com/736x/31/ac/0f/31ac0fe5d07fd24af81604c9346c4d3c.jpg",
+      description: "A smooth operator, always calm under pressure.",
+    },
+    {
+      id: 3,
+      name: "Hiro",
+      image: "https://pics.craiyon.com/2023-10-19/ea996eec5cb74e9cbd982db72d8886f3.webp",
+      description: "A laid-back hero with a hidden dark past.",
+    },
+  ],
+  "🕶️": [
+    {
+      id: 1,
+      name: "Shiro",
+      image: "/images/image1.png",
+      description: "A stealthy assassin who prefers to stay in the shadows.",
+    },
+    {
+      id: 2,
+      name: "Ren",
+      image: "/images/image2.png",
+      description: "A cool and mysterious figure with incredible skills.",
+    },
+    {
+      id: 3,
+      name: "Kenta",
+      image: "/images/image3.png",
+      description: "A stylish warrior who never loses his composure.",
+    },
+  ],
+};
+
+
   
   // Section 2
   export const fantasiesAnime = [
