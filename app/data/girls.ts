@@ -163,7 +163,7 @@ export const charactersGirls = [
 export const generatedAiImageGirls = [
   {
     id: 1,
-    name: "playful pose, casual attire",
+    title: "playful pose, casual attire",
     description: "High Resolution, Portrait, Relaxed and Playful Pose",
     images: [
       "https://images.unsplash.com/photo-1517841905240-472988babdf9?fit=crop&w=500&q=80", 
@@ -173,7 +173,7 @@ export const generatedAiImageGirls = [
   },
   {
     id: 2,
-    name: "focused expression, pink dress",
+    title: "focused expression, pink dress",
     description: "Full HD, Portrait, Wearing Pink Dress, Confident Look",
     images: [
       "https://images.unsplash.com/photo-1534528741775-53994a69daeb?fit=crop&w=500&q=80", 
@@ -183,7 +183,7 @@ export const generatedAiImageGirls = [
   },
   {
     id: 3,
-    name: "full HD portrait, serious look",
+    title: "full HD portrait, serious look",
     description: "Full HD, Portrait, Serious Expression, Casual Attire",
     images: [
       "https://images.unsplash.com/photo-1544005313-94ddf0286df2?fit=crop&w=500&q=80", 

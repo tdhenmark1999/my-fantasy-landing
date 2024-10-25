@@ -163,19 +163,19 @@ export const charactersAnime = [
 export const generatedAiImageAnime = [
     {
       id: 1,
-      name: "seductive posture, medium breasts",
+      title: "seductive posture, medium breasts",
       description: "High Resolution, Portrait, Body Stocking, On All Fours",
       images: ["/images/image5.png", "/images/image5.png", "/images/image5.png"],
     },
     {
       id: 2,
-      name: "focus face, smiling, bunny, pink hair",
+      title: "focus face, smiling, bunny, pink hair",
       description: "Nectar 2.5 Model, Full HD, Portrait, Bunny Costume",
       images: ["/images/image6.png", "/images/image6.png", "/images/image6.png"],
     },
     {
       id: 3,
-      name: "full HD portrait, seductive look",
+      title: "full HD portrait, seductive look",
       description: "Full HD, Portrait, Body Stocking, On All Fours",
       images: ["/images/image7.png", "/images/image7.png", "/images/image7.png"],
     },

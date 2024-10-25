@@ -41,7 +41,7 @@ const GenerateImagePage: React.FC<GenerateImagePageProps> = ({ data }) => {
                     onClick={() => setSelectedCategory(category.id)}
                   >
                     <h2 className="text-white lg:text-base text-xs">
-                      {category.name}
+                      {category.title}
                     </h2>
                     <p className="lg:text-xs text-gray-150 mt-1 text-[10px]">
                       {category.description}

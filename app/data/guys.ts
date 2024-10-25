@@ -163,7 +163,7 @@ export const voiceCharactersGuys = [
 export const generatedAiImageGuys = [
   {
     id: 1,
-    name: "Confident Pose, Athletic Build",
+    title: "Confident Pose, Athletic Build",
     description: "High Resolution, Portrait, Relaxed, Gym Attire",
     images: [
       "https://images.unsplash.com/photo-1625019030820-e4ed970a6c95?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTY0fHxtZW58ZW58MHx8MHx8fDA%3D", 
@@ -173,7 +173,7 @@ export const generatedAiImageGuys = [
   },
   {
     id: 2,
-    name: "Focused Expression, Gym Workout",
+    title: "Focused Expression, Gym Workout",
     description: "Full HD, Portrait, Focused Expression, Gym Environment",
     images: [
       "https://images.unsplash.com/photo-1610312856669-2cee66b2949c?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTg3fHxtZW58ZW58MHx8MHx8fDA%3D", 
@@ -183,7 +183,7 @@ export const generatedAiImageGuys = [
   },
   {
     id: 3,
-    name: "Relaxed Pose, Adventure Gear",
+    title: "Relaxed Pose, Adventure Gear",
     description: "Full HD, Portrait, Ready for Adventure, Outdoor Setting",
     images: [
       "https://images.unsplash.com/photo-1484515991647-c5760fcecfc7?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTg4fHxtZW58ZW58MHx8MHx8fDA%3D", 
