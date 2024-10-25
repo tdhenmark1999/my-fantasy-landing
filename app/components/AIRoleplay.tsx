@@ -5,16 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import CharacterCard from "./CharacterCard";
 import { categories } from "../data/data";
 import HeaderContainer from "./HeaderContainer";
+import { CharacterSingle } from '../model/Character';
 
-interface Character {
-  id: number;
-  name: string;
-  category: string;
-  description: string;
-  image: string;
-}
+
   interface AIRoleplayProps {
-    data: Character[]; 
+    data: CharacterSingle[]; 
   }
 
   const AIRoleplay: React.FC<AIRoleplayProps> = ({ data }) => {
@@ -79,7 +74,7 @@ interface Character {
         transition={{ duration: 0.4 }}
         className="overflow-hidden"
       >
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 mt-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 mt-6">
           <AnimatePresence>
             {filteredCharacters.slice(0, visibleCharacters).map((character) => (
               <motion.div

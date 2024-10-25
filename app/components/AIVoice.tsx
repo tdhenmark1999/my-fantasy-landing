@@ -1,23 +1,26 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import HeaderContainer from "./HeaderContainer";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-
-interface Avatar {
-  id: number;
-  name: string;
-  image: string;
-  description: string;
-}
+import { Avatar } from './../model/Avatar';
 
 interface AIVoiceProps {
-  data: Avatar[]; 
+  data: Avatar[];
 }
 
 const AIVoice: React.FC<AIVoiceProps> = ({ data }) => {
   const [selectedAvatar, setSelectedAvatar] = useState(2);
+
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      const container = scrollContainerRef.current;
+      container.scrollLeft = container.scrollWidth / 2 - container.clientWidth / 2;
+    }
+  }, []);
 
   return (
     <section className="relative w-full bg-cover bg-center bg-no-repeat px-4 sm:px-6 lg:px-8 py-8">
@@ -27,7 +30,7 @@ const AIVoice: React.FC<AIVoiceProps> = ({ data }) => {
           <HeaderContainer
             buttonText="AI Voice - Coming Soon"
             title="Hear your Companions!"
-            description=" Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                     eiusmod tempor incididunt."
           />
           <motion.div
@@ -58,34 +61,40 @@ const AIVoice: React.FC<AIVoiceProps> = ({ data }) => {
                 height={300}
                 className="pointer-events-none absolute top-0 left-1/2 transform -translate-x-1/2"
               />
-              <div className="flex justify-center space-x-8 mt-10">
+
+              <div
+                ref={scrollContainerRef} 
+                className="flex md:justify-center space-x-8 mt-10 overflow-x-auto md:scrollbar-hide py-10"
+              >
                 {data.map((avatar, index) => (
                   <div
                     key={avatar.id}
-                    className={`relative rounded-full overflow-hidden cursor-pointer transition-transform duration-300 ${
+                    className={`relative flex-shrink-0 rounded-full overflow-hidden cursor-pointer transition-transform duration-300 ${
                       selectedAvatar === index ? "transform scale-125" : "transform scale-100"
                     }`}
                     onClick={() => setSelectedAvatar(index)}
                   >
-                    <Image
-                      src={avatar.image}
-                      alt={`Avatar of ${avatar.name}`}
-                      width={80}
-                      height={80}
-                      className="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 object-cover sm:w-16 sm:h-16 "
-                    />
+                    <div key={index} className="relative" style={{ height: '109px', width: '109px' }}>
+                      <Image
+                        src={avatar.image}
+                        alt={`Avatar of ${avatar.name}`}
+                        layout="fill"
+                        objectFit="cover"
+                        className="object-cover rounded-lg"
+                      />
+                    </div>
                   </div>
                 ))}
               </div>
 
               <div className="mt-12 flex flex-col items-center justify-center">
-                <div className="flex items-center justify-center space-x-2 gap-[25px]">
+                <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-2 gap-[25px]">
                   <div className="text-white flex">
                     <Image src="/icons/ico-music.svg" alt="Music Icon" width={132} height={63} />
                   </div>
-                  <div className="flex max-w-[355px] items-start gap-[10px]">
+                  <div className="flex max-w-full sm:max-w-[355px] items-start gap-[10px]">
                     <Image src="/icons/ico-dialog-right.svg" alt="Dialog Right Icon" width={24} height={24} />
-                    <p className="text-white text-base">
+                    <p className="text-white text-sm sm:text-base">
                       {data[selectedAvatar].description}
                     </p>
                     <Image src="/icons/ico-dialog-left.svg" alt="Dialog Left Icon" width={24} height={24} />

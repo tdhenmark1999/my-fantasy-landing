@@ -1,11 +1,8 @@
 import Image from "next/image";
+import { CharacterSingle } from '../model/Character';
 
 interface CharacterCardProps {
-  character: {
-    name: string;
-    image: string;
-    description: string;
-  };
+  character: CharacterSingle
   width?: string;
   height?: string;
 }

@@ -4,14 +4,10 @@ import React, { useState } from "react";
 import HeaderContainer from "./HeaderContainer";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { CharacterMultiple } from '../model/Character';
 
 interface GenerateImagePageProps {
-  data: {
-    id: number;
-    title: string;
-    description: string;
-    images: string[];
-  }[];
+  data: CharacterMultiple[];
 }
 
 const GenerateImagePage: React.FC<GenerateImagePageProps> = ({ data }) => {
@@ -45,7 +41,7 @@ const GenerateImagePage: React.FC<GenerateImagePageProps> = ({ data }) => {
                     onClick={() => setSelectedCategory(category.id)}
                   >
                     <h2 className="text-white lg:text-base text-xs">
-                      {category.title}
+                      {category.name}
                     </h2>
                     <p className="lg:text-xs text-gray-150 mt-1 text-[10px]">
                       {category.description}
@@ -63,20 +59,19 @@ const GenerateImagePage: React.FC<GenerateImagePageProps> = ({ data }) => {
                   />
                 </button>
               </div>
-              <div className="flex space-x-4 mt-8 lg:mt-0 lg:ml-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 lg:mt-0 lg:ml-8 w-full">
                 {data
                   .find((category) => category.id === selectedCategory)
                   ?.images.map((image, index) => (
-                      <div key={index} style={{ height: '256px', position: 'relative', width: '186.76px' }}>
+                    <div key={index} className="relative" style={{ height: '256px', width: '100%' }}>
                       <Image
                         src={image}
                         alt={`Generated ${selectedCategory} Image ${index + 1}`}
                         layout="fill" 
                         objectFit="cover" 
-                        className="object-cover"
+                        className="object-cover rounded-lg"
                       />
-                      </div>
-
+                    </div>
                   ))}
               </div>
             </div>

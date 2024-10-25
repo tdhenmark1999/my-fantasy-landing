@@ -2,16 +2,10 @@
 
 import CharacterCard from "./CharacterCard";
 import { motion, AnimatePresence } from "framer-motion";
-
-interface Character {
-  id: number;
-  name: string;
-  image: string;
-  description: string;
-}
+import { CharacterSingle } from '../model/Character';
 
 interface HeroSectionProps {
-    data: Character[]; 
+    data: CharacterSingle[]; 
   }
 
 const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
