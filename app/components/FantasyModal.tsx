@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { SelectedFantasy } from './../model/Fantasy';
+import Image from 'next/image';
 
 interface FantasyModalProps {
   selectedFantasy: SelectedFantasy;
@@ -19,9 +20,11 @@ const FantasyModal: React.FC<FantasyModalProps> = ({ selectedFantasy, onClose })
         <button className="absolute top-3 right-3 text-white" onClick={onClose}>
           ✖️
         </button>
-        <img
+        <Image
           src={selectedFantasy.image}
           alt={selectedFantasy.title}
+          width={500}  
+          height={256}
           className="w-full h-64 object-cover rounded-lg"
         />
         <h3 className="mt-4 text-xl font-bold">{selectedFantasy.title}</h3>

@@ -1,9 +1,11 @@
 import React from 'react';
+import { CardFantasy } from './../model/Fantasy';
+import Image from 'next/image';
 
 interface LikeButtonProps {
-  fantasy: any;
+  fantasy: CardFantasy;
   liked: boolean;
-  onToggleLike: (fantasy: any, e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onToggleLike: (fantasy: CardFantasy, e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 const LikeButton: React.FC<LikeButtonProps> = ({ fantasy, liked, onToggleLike }) => {
@@ -14,10 +16,12 @@ const LikeButton: React.FC<LikeButtonProps> = ({ fantasy, liked, onToggleLike })
       }`}
       onClick={(e) => onToggleLike(fantasy, e)}
     >
-      <img
+      <Image
         alt="icon heart"
         src={liked ? "/icons/ico-heart-active.svg" : "/icons/ico-heart.svg"}
-      /> 
+        width={16}  
+        height={16} 
+      />
       {fantasy.likes}
     </button>
   );

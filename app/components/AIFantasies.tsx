@@ -5,19 +5,20 @@ import { motion, AnimatePresence } from "framer-motion";
 import FantasyCard from "./FantasyCard";
 import FantasyModal from "./FantasyModal";
 import HeaderContainer from "./HeaderContainer";
+import { CardFantasy } from './../model/Fantasy';
 
 interface AIFantasiesProps {
-    data: any[]; 
-  }
+  data: CardFantasy[]; 
+}
 
-  const AIFantasies: React.FC<AIFantasiesProps> = ({ data }) => {
-  const [selectedFantasy, setSelectedFantasy] = useState<any>(null);
+const AIFantasies: React.FC<AIFantasiesProps> = ({ data }) => {
+  const [selectedFantasy, setSelectedFantasy] = useState<CardFantasy | null>(null);  
   const [liked, setLiked] = useState<{ [key: string]: boolean }>({});
   const [visibleFantasies, setVisibleFantasies] = useState(3);
   const [isFullListShown, setIsFullListShown] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  const openModal = (fantasy: any) => {
+  const openModal = (fantasy: CardFantasy) => { 
     setSelectedFantasy(fantasy);
   };
 
@@ -26,7 +27,7 @@ interface AIFantasiesProps {
   };
 
   const toggleLike = (
-    fantasy: any,
+    fantasy: CardFantasy, 
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     e.stopPropagation();

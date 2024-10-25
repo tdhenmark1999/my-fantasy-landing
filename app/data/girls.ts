@@ -1,16 +1,19 @@
 // Section 1
 export const charactersGirls = [
  {
+    id: 1,
     name: "Ella",
     image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?fit=crop&w=500&q=80", 
     description: "She is the most popular girl in school but has a kind heart.",
   },
   {
+    id: 2,
     name: "Lily",
     image: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?fit=crop&w=500&q=80", 
     description: "She’s fun, outgoing, and always up for an adventure.",
   },
   {
+    id: 3,
     name: "Sophie",
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?fit=crop&w=500&q=80", 
     description: "She's the quiet one in the group but always has the best advice.",

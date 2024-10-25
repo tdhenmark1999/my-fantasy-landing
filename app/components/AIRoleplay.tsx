@@ -6,8 +6,15 @@ import CharacterCard from "./CharacterCard";
 import { categories } from "../data/data";
 import HeaderContainer from "./HeaderContainer";
 
+interface Character {
+  id: number;
+  name: string;
+  category: string;
+  description: string;
+  image: string;
+}
   interface AIRoleplayProps {
-    data: any[]; 
+    data: Character[]; 
   }
 
   const AIRoleplay: React.FC<AIRoleplayProps> = ({ data }) => {

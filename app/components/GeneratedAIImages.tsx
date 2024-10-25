@@ -1,8 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import HeaderContainer from "./HeaderContainer";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 interface GenerateImagePageProps {
   data: {
@@ -15,7 +16,7 @@ interface GenerateImagePageProps {
 
 const GenerateImagePage: React.FC<GenerateImagePageProps> = ({ data }) => {
   const [selectedCategory, setSelectedCategory] = useState(2);
-  
+
   return (
     <div className="px-4 sm:px-6 lg:px-8 py-8">
       <div className="container mx-auto">
@@ -54,21 +55,28 @@ const GenerateImagePage: React.FC<GenerateImagePageProps> = ({ data }) => {
 
                 <button className="justify-center w-full md:w-auto flex items-center gap-2.5 rounded-[31px] text-xs lg:text-sm font-medium bg-red-500 hover:bg-red-600 text-white font-bold py-2 lg:py-3 px-4 lg:px-6 rounded-lg mt-4 transition">
                   Generate Image{" "}
-                  <img src="icons/ico-arrow-right.svg" alt="icon arrow right" />
+                  <Image
+                    src="/icons/ico-arrow-right.svg"
+                    alt="icon arrow right"
+                    width={16}
+                    height={16}
+                  />
                 </button>
               </div>
-
               <div className="flex space-x-4 mt-8 lg:mt-0 lg:ml-8">
                 {data
                   .find((category) => category.id === selectedCategory)
                   ?.images.map((image, index) => (
-                    <div key={index} className="">
-                      <img
+                      <div key={index} style={{ height: '256px', position: 'relative', width: '186.76px' }}>
+                      <Image
                         src={image}
                         alt={`Generated ${selectedCategory} Image ${index + 1}`}
-                        className="w-[186.76px] h-full object-cover rounded-[13.01px]"
+                        layout="fill" 
+                        objectFit="cover" 
+                        className="object-cover"
                       />
-                    </div>
+                      </div>
+
                   ))}
               </div>
             </div>

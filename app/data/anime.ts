@@ -1,16 +1,19 @@
 // Section 1
 export const charactersAnime = [
     {
+      id: 1,
       name: "Mellow",
       image: "/images/image3.png",
       description: "He is your enemy but you guys are in the same friend group.",
     },
     {
+      id: 2,
       name: "Jay Smith",
       image: "/images/image1.png",
       description: "He is your enemy but you guys are in the same friend group.",
     },
     {
+      id: 3,
       name: "Milo",
       image: "/images/image2.png",
       description: "He is your enemy but you guys are in the same friend group.",
@@ -162,18 +165,18 @@ export const generatedAiImageAnime = [
       id: 1,
       title: "seductive posture, medium breasts",
       description: "High Resolution, Portrait, Body Stocking, On All Fours",
-      images: ["images/image5.png", "images/image5.png", "images/image5.png"],
+      images: ["/images/image5.png", "/images/image5.png", "/images/image5.png"],
     },
     {
       id: 2,
       title: "focus face, smiling, bunny, pink hair",
       description: "Nectar 2.5 Model, Full HD, Portrait, Bunny Costume",
-      images: ["images/image6.png", "images/image6.png", "images/image6.png"],
+      images: ["/images/image6.png", "/images/image6.png", "/images/image6.png"],
     },
     {
       id: 3,
       title: "full HD portrait, seductive look",
       description: "Full HD, Portrait, Body Stocking, On All Fours",
-      images: ["images/image7.png", "images/image7.png", "images/image7.png"],
+      images: ["/images/image7.png", "/images/image7.png", "/images/image7.png"],
     },
   ];
